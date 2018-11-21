@@ -18,7 +18,7 @@ formulae or units of measurement are required in future. DI also permits the cod
 ## Installation
 * Clone the repository:
 
-`` git clone ``
+`` git clone https://github.com/VindoViper/iss-finder.git ``
 
 * Install dependencies:
 
