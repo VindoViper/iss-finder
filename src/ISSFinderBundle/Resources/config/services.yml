@@ -1,0 +1,18 @@
+services:
+    iss_finder.api:
+        class: ISSFinderBundle\Service\ISSFinderAPI
+        arguments:
+            - '@iss_finder.client'
+            - '@iss_finder.haversine_calculator'
+        tags:
+          - {name: wa72_jsonrpc.exposable}
+
+    iss_finder.client:
+        class: ISSFinderBundle\Client\DataSourceClient
+        arguments:
+            - '@eight_points_guzzle.client.iss_finder'
+            - '@monolog.logger'
+            - '%iss_satellite_id%'
+
+    iss_finder.haversine_calculator:
+        class: ISSFinderBundle\Calculator\HaversineCalculator
